@@ -1,0 +1,10 @@
+Nombre: Javier Antonio Rodriguez
+No: 19
+Horarios en línea:
+>-
+Horarios presenciales:
+<jueves:15:00-17:00
+Temas de asesorías:
+-python
+-linux
+Liga de calendly:nan

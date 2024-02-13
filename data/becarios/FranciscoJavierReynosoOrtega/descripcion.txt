@@ -1,0 +1,13 @@
+Nombre: Francisco Javier Reynoso Ortega 
+No: 9
+Horarios en línea:
+>sabado:11:00-13:00
+Horarios presenciales:
+<martes:11:00-13:00
+Temas de asesorías:
+-linux
+-python
+-desarrollo_web
+-javascript
+-docker
+Liga de calendly:https://calendly.com/franciscoro-proteco/asesorias-proteco

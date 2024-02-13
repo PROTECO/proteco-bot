@@ -1,0 +1,40 @@
+Nombre: Jorge Eithan Treviño 
+No: 20
+Horarios en línea:
+>lunes:17:00-17:30
+>lunes:19:30-21:00
+>martes:15:00-17:00
+>jueves:15:00-17:00
+>viernes:07:00-09:00
+>viernes:17:00-19:00
+Horarios presenciales:
+<lunes:17:00-17:30
+<lunes:19:30-21:00
+<martes:15:00-17:00
+<jueves:15:00-17:00
+<viernes:08:00-09:00
+<17:00-19:00
+Temas de asesorías:
+-fundamentos_de_programacion
+-eda
+-poo
+-c
+-c++
+-c#
+-python
+-java
+-uml
+-linux
+-matlab
+-latex
+-arduino
+-redes_de_datos
+-raspberrypi
+-desarrollo_web
+-machine_learning
+-r
+-ciberseguridad
+-office
+-instalacion_de_software
+-mantenimiento_de_computadoras
+Liga de calendly:https://calendly.com/e1th4nuwu/asesorias-proteco
