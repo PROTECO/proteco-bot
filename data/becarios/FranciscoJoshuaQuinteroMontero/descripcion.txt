@@ -1,0 +1,14 @@
+Nombre: Francisco Joshua Quintero Montero 
+No: 8
+Horarios en línea:
+>viernes:09:00-11:00
+Horarios presenciales:
+<martes:15:00-16:00
+<miercoles:11:00-12:00
+<miercoles:14:00-16:00
+Temas de asesorías:
+-python
+-bases_de_datos
+-linux
+-desarrollo_web
+Liga de calendly:https://calendly.com/joshuaqm-proteco/asesoria-proteco

@@ -1,0 +1,12 @@
+Nombre: Juan Angeles Hernandez
+No: 24
+Horarios en línea:
+>viernes:10:00-11:00
+Horarios presenciales:
+<martes:18:00-19:00
+<jueves:18:00-19:00
+Temas de asesorías:
+-c++
+-redes_de_datos
+-linux
+Liga de calendly:https://calendly.com/japroteco/asesorias-proteco-1

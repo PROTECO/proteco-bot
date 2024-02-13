@@ -1,0 +1,16 @@
+Nombre: Oscar Manuel Suaznavar Arvizu 
+No: 10
+Horarios en línea:
+>viernes:10:00-12:00
+Horarios presenciales:
+<sabado13:00-14:00
+<martes:11:00-13:30
+<jueves:9:00-11:30
+Temas de asesorías:
+-java
+-bases_de_datos
+-fundamentos_de_programacion
+-poo
+-linux
+-python
+Liga de calendly:https://calendly.com/oscar_suaz/asesoria-proteco 

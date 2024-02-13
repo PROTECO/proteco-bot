@@ -1,0 +1,19 @@
+Nombre: David Elias Gonzalez Garcia
+No: 16
+Horarios en línea:
+Horarios presenciales:
+<martes:13:00-15:00
+<miercoles:13;00-15:00
+<jueves:13:00-15:00
+<viernes:11:30-15:00
+Temas de asesorías:
+-desarrollo_web
+-react
+-javascript
+-python
+-docker
+-flutter
+-linux
+-git_github
+-matlab
+Liga de calendly:nan

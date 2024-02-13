@@ -1,0 +1,13 @@
+Nombre: Cynthia Berenice Dominguez
+No: 14
+Horarios en línea:
+>martes:7:00-8:00
+>viernes:18:00-20:00
+Horarios presenciales:
+<jueves:11:00-13:00
+<jueves:14:00-15:00
+Temas de asesorías:
+-fundamentos_de_programacion
+-diseno_bases_de_datos
+-excel
+Liga de calendly:nan

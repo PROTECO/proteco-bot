@@ -1,0 +1,18 @@
+Nombre: Daniel Garcia Cerda
+No: 23
+Horarios en línea:
+>martes:16:00-19:00
+>jueves:17:00-19:00
+Horarios presenciales:
+<martes:11:30-13:30
+<jueves:11:00-12:00
+<jueves:15:00-16:00
+Temas de asesorías:
+-fundamentos_de_programacion
+-python
+-excel
+-matlab
+-arduino
+-desarrollo_web
+-django.
+Liga de calendly:nan

@@ -1,0 +1,14 @@
+Nombre: David Julian Muñoz Norberto 
+No: 7
+Horarios en línea:
+>sabado:11:00-13:00
+Horarios presenciales:
+<miercoles:11:00-13:00
+<viernes13:00-15:00
+Temas de asesorías:
+-java
+-python
+-poo
+-fundamentos_de_programacion
+-eda
+Liga de calendly:https://calendly.com/davidmn-proteco/30min

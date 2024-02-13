@@ -1,0 +1,20 @@
+Nombre: Angel Joel Flores Torres 
+No: 4
+Horarios en línea:
+>lunes:11:20-14:00
+>martes:11:20-13:30
+>miercoles:11:20-14:00
+>jueves:11:20-13:30
+>jueves:16:20-18:30
+Horarios presenciales:
+<lunes:11:20-14:00
+<martes:11:20-13:30
+<miercoles:11:20-14:00
+<jueves:11:20-13:30
+<jueves:16:20-18:30
+Temas de asesorías:
+-fundamentos_de_programacion
+-python
+-linux
+-c
+Liga de calendly:https://calendly.com/angelft-proteco/30min

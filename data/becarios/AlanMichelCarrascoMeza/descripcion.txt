@@ -1,0 +1,20 @@
+Nombre: Alan Michel Carrasco Meza
+No: 21
+Horarios en línea:
+Horarios presenciales:
+<lunes:9:00-11:00
+<martes:11:00-14:00
+<miercoles:9:00-11:00
+<jueves:11:00-14:00
+Temas de asesorías:
+-fundamentos_de_programacion
+-c
+-c++
+-python
+-matlab
+-eda
+-latex
+-arduino
+-electronica
+-analisis_de_circuitos
+Liga de calendly:https://calendly.com/alancm-proteco/30min
