@@ -14,5 +14,5 @@ Temas de asesorías:
 -matlab
 -arduino
 -desarrollo_web
--django.
+-django
 Liga de calendly:nan

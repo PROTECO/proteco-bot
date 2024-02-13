@@ -8,6 +8,6 @@ Horarios presenciales:
 <jueves:14:00-15:00
 Temas de asesorías:
 -fundamentos_de_programacion
--diseno_bases_de_datos
+-bases_de_datos
 -excel
 Liga de calendly:nan

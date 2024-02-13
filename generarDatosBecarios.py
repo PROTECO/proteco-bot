@@ -99,18 +99,21 @@ for tema in temas_asesoria:
         # Horarios en linea
         try:
             horarios_en_linea = pd.read_csv(f'data/becarios/{nombre}/horario_en_linea.csv')
-            dia = horarios_en_linea['Horario'].values[0].split(':',1)[0]
-            horario = horarios_en_linea['Horario'].values[0].split(':',1)[1]
-            df_en_linea = pd.concat([df_en_linea, pd.DataFrame([[nombre, dia, horario]], columns=['Nombre', 'Dia', 'Horario'])])
+            for horario in horarios_en_linea['Horario']:
+                dia = horario.split(':',1)[0]
+                horario = horario.split(':',1)[1]
+                df_en_linea = pd.concat([df_en_linea, pd.DataFrame([[nombre, dia, horario]], columns=['Nombre', 'Dia', 'Horario'])])
         except:
             pass
 
         # Horarios presenciales
         try:
             horarios_presencial = pd.read_csv(f'data/becarios/{nombre}/horario_presencial.csv')
-            dia = horarios_presencial['Horario'].values[0].split(':',1)[0]
-            horario = horarios_presencial['Horario'].values[0].split(':',1)[1]
-            df_presencial = pd.concat([df_presencial, pd.DataFrame([[nombre, dia, horario]], columns=['Nombre', 'Dia', 'Horario'])])
+            for horario in horarios_presencial['Horario']:
+                dia = horario.split(':',1)[0]
+                horario = horario.split(':',1)[1]
+                df_presencial = pd.concat([df_presencial, pd.DataFrame([[nombre, dia, horario]], columns=['Nombre', 'Dia', 'Horario'])])
+            
         except:
             pass
 
