@@ -1,21 +1,13 @@
 import pandas as pd
 import os
 from unidecode import unidecode
-
+from modules.utils import to_snake_case
 # Lista de lenguajes de programación ofrecidos
 temas_asesoria = set()
 
 # Leer el archivo CSV
 data = pd.read_csv('data/horarios_origin.csv')
 
-def to_snake_case(code):
-    # Eliminar espacios al inicio y al final
-    code = code.strip()
-    # Reemplazar espacios y guiones por guiones bajos
-    code = code.replace(" ", "_").replace("-", "_")
-    # Pasar a minúsculas
-    code = code.lower()
-    return unidecode(code)
 
 
 # Crear un directorio para cada becario con sus datos y uno para cada tema de asesoría
@@ -88,8 +80,8 @@ for becario in data['No']:
 # Crear archivos para los temas de asesoría
 for tema in temas_asesoria:
     
-    df_presencial = pd.DataFrame(columns=['Nombre', 'Día', 'Horario'])
-    df_en_linea = pd.DataFrame(columns=['Nombre', 'Día', 'Horario'])
+    df_presencial = pd.DataFrame(columns=['Nombre', 'Dia', 'Horario'])
+    df_en_linea = pd.DataFrame(columns=['Nombre', 'Dia', 'Horario'])
     nombres = pd.read_csv(f'data/asesorias/{tema}/becarios.csv')
 
     # Iterar a traves de cada becario

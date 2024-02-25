@@ -1,7 +1,7 @@
-Nombre,Día,Horario,Dia
-IvanFernandezCano,,00-19:00,lunes18
-IvanFernandezCano,,18:00-19:00,martes
-IvanFernandezCano,,18:00-19:00,miercoles
-IvanFernandezCano,,18:00-19:00,jueves
-IvanFernandezCano,,18:00-19:00,viernes
-FranciscoJavierReynosoOrtega,,11:00-13:00,sabado
+Nombre,Dia,Horario
+IvanFernandezCano,lunes18,00-19:00
+IvanFernandezCano,martes,18:00-19:00
+IvanFernandezCano,miercoles,18:00-19:00
+IvanFernandezCano,jueves,18:00-19:00
+IvanFernandezCano,viernes,18:00-19:00
+FranciscoJavierReynosoOrtega,sabado,11:00-13:00

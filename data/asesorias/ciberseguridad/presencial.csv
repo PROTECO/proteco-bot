@@ -1,7 +1,7 @@
-Nombre,Día,Horario,Dia
-JorgeEithanTreviño,,17:00-17:30,lunes
-JorgeEithanTreviño,,19:30-21:00,lunes
-JorgeEithanTreviño,,15:00-17:00,martes
-JorgeEithanTreviño,,15:00-17:00,jueves
-JorgeEithanTreviño,,08:00-09:00,viernes
-JorgeEithanTreviño,,00-19:00,17
+Nombre,Dia,Horario
+JorgeEithanTreviño,lunes,17:00-17:30
+JorgeEithanTreviño,lunes,19:30-21:00
+JorgeEithanTreviño,martes,15:00-17:00
+JorgeEithanTreviño,jueves,15:00-17:00
+JorgeEithanTreviño,viernes,08:00-09:00
+JorgeEithanTreviño,17,00-19:00

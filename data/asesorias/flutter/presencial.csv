@@ -1,5 +1,5 @@
-Nombre,Día,Horario,Dia
-DavidEliasGonzalezGarcia,,13:00-15:00,martes
-DavidEliasGonzalezGarcia,,13;00-15:00,miercoles
-DavidEliasGonzalezGarcia,,13:00-15:00,jueves
-DavidEliasGonzalezGarcia,,11:30-15:00,viernes
+Nombre,Dia,Horario
+DavidEliasGonzalezGarcia,martes,13:00-15:00
+DavidEliasGonzalezGarcia,miercoles,13;00-15:00
+DavidEliasGonzalezGarcia,jueves,13:00-15:00
+DavidEliasGonzalezGarcia,viernes,11:30-15:00

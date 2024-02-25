@@ -1,4 +1,4 @@
-Nombre,Día,Horario,Dia
-IvanFernandezCano,,11:00-13:00,lunes
-IvanFernandezCano,,:11:00-13:00,miercoles
-IvanFernandezCano,,11:00-13:00,jueves
+Nombre,Dia,Horario
+IvanFernandezCano,lunes,11:00-13:00
+IvanFernandezCano,miercoles,:11:00-13:00
+IvanFernandezCano,jueves,11:00-13:00

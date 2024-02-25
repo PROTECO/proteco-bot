@@ -6,6 +6,14 @@ from telegram.ext import Aplication, CommandHandler, MessageHandler, filters, Co
 TOKEN: Final = '6583577828:AAFOvhzQdsnnJFPWvtE8HIAZ0XaOk9MQ0JY' 
 BOT_USERNAME: Final = '@proteco_telegram_bot'
 
+TEMAS_ASESORIA: Final = ("Arduino", "Analísis de Circuitos", "Bases de Datos", "C", "C#", "C++", 
+                         "Ciberseguridad", "Desarrollo Web", "Electrónica", "Ensamblador Z80", "Excel",
+                         "Flutter", "Fundamentos de Programación", "Git-GitHub", "Instalación de Software",
+                         "Java", "JavaScript", "Kubernetes", "LaTeX", "Linux" "Machine Learning",
+                         "Mantenimiento de computadoras", "Matlab", "Office", "POO", "Python", "R",
+                         "Raspberyy PI", "React", "Redes de datos", "UML"
+                         )
+
 async def start_command(update: Uptdate, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(' Hola, Gracias por comunicarte conmigo, yo soy PROTECO BOT ')
 
