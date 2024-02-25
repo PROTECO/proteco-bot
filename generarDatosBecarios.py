@@ -88,8 +88,8 @@ for becario in data['No']:
 # Crear archivos para los temas de asesoría
 for tema in temas_asesoria:
     
-    df_presencial = pd.DataFrame(columns=['Nombre', 'Día', 'Horario'])
-    df_en_linea = pd.DataFrame(columns=['Nombre', 'Día', 'Horario'])
+    df_presencial = pd.DataFrame(columns=['Nombre', 'Dia', 'Horario'])
+    df_en_linea = pd.DataFrame(columns=['Nombre', 'Dia', 'Horario'])
     nombres = pd.read_csv(f'data/asesorias/{tema}/becarios.csv')
 
     # Iterar a traves de cada becario
