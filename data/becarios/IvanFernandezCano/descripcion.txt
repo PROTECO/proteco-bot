@@ -16,7 +16,7 @@ Temas de asesorías:
 -eda
 -poo
 -linux
--redes_de_datos_desarrollo_web
+-redes_de_datos._desarrollo_web
 -docker
 -kubernetes
 Liga de calendly:nan
