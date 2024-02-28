@@ -1,9 +1,11 @@
 Nombre: David Elias Gonzalez Garcia
 No: 16
 Horarios en línea:
+>viernes:12:00-15:00
+>sabado:10:00-13:00
 Horarios presenciales:
 <martes:13:00-15:00
-<miercoles:13;00-15:00
+<miercoles:13:00-15:00
 <jueves:13:00-15:00
 <viernes:11:30-15:00
 Temas de asesorías:
@@ -16,4 +18,4 @@ Temas de asesorías:
 -linux
 -git_github
 -matlab
-Liga de calendly:nan
+Liga de calendly:https://calendly.com/davideliasgg-proteco/asesorias-proteco
