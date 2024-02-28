@@ -123,7 +123,7 @@ class Reader:
     
 
     ## INFORMACIÓN DE LAS ASESORÍAS
-    
+    @staticmethod
     def getHorarioAsesoriaPresencial(tema: str) -> pd.DataFrame:
         """
         Regresa un DataFrame con los horarios presenciales de la asesoría.
@@ -141,6 +141,7 @@ class Reader:
         horario_asesoria = pd.read_csv(f'data/asesorias/{tema}/presencial.csv')
         return horario_asesoria
     
+    @staticmethod
     def getHorarioAsesoriaEnLinea(tema: str) -> pd.DataFrame:
         """
         Regresa un DataFrame con los horarios en línea de la asesoría.
@@ -158,6 +159,7 @@ class Reader:
         horario_asesoria = pd.read_csv(f'data/asesorias/{tema}/en_linea.csv')
         return horario_asesoria
     
+    @staticmethod
     def getBecarios(tema: str) -> pd.DataFrame:
         """
         Regresa un DataFrame con los becarios que están inscritos en la asesoría.
