@@ -1,4 +1,3 @@
-Por supuesto, aquí tienes un ejemplo básico de cómo podrías usar la biblioteca `requests` de Python para interactuar con la API de Calendly para crear una cita:
 
 ```python
 import requests
