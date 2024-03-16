@@ -18,21 +18,30 @@ TEMAS_ASESORIA: Final = ("Arduino", "Analísis de Circuitos", "Bases de Datos", 
 lector = reader.Reader()
 
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Funcion asincronica que permite realizar operaciones de entrada y salida sin bloquear el hilo de ejecucion.
+    --- Encargada de gestionar el comando /start ---
+    Keywords arguments: 
+    update -- primer argumento, objeto que representa la actualizacion recibida del bot, contiene informacion sobre -> mensaje, chat, usuario
+    context -- parametro para almacenar datos y pasar informacion entre las diferentes funciones del bot -> Estado del usuario, historial, acceso a funcionalidades
+    """
     await update.message.reply_text(' Hola, Gracias por comunicarte conmigo, yo soy PROTECO BOT ')
 
-async def view_schedules_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    context.user_data['option'] = 'schedule'
-    
-    s = "0. Regresar al menú principal\n"
-    for i, tema in enumerate(TEMAS_ASESORIA):
-        s += f'{i+1}. {tema}\n'
-    await update.message.reply_text('Estas son las asesorías disponibles:\n\n' + s)
-    await update.message.reply_text('¿Cuál es el tema de tu interés?')
-
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Funcion asincronica que permite realizar operaciones de entrada y salida sin bloquear el hilo de ejecucion.
+    --- Encargada de gestionar el comando /help ---
+    Keyword arguments:
+    Update -- primer argumento, objeto que representa la actualizacion recibida del bot, contiene informacion sobre -> mensaje, chat, usuario
+    context -- parametro para almacenar datos y pasar informacion entre las diferentes funciones del bot -> Estado del usuario, historial, acceso a funcionalidades
+    """
     await update.message.reply_text(' Hola, soy PROTECO BOT, escribe algo para que te pueda responder')
 
 async def custom_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Funcion asincronica que permite realizar operaciones de entrada y salida sin bloquear el hilo de ejecucion.
+    --- Encargada de gestionar los comandos personalizados por el usuario ---
+    Keywords arguments:
+    Update -- primer argumento, objeto que representa la actualizacion recibida del bot, contiene informacion sobre -> mensaje, chat, usuario
+    context -- parametro para almacenar datos y pasar informacion entre las diferentes funciones del bot -> Estado del usuario, historial, acceso a funcionalidades
+    """
     await update.message.reply_text(' Este es un comando personalizado')
 
 # Manejadores de opciones
@@ -50,7 +59,7 @@ def schedule_reader(input):
 # respuestas
     
 def handle_response(text: str) -> str:
-
+    """Funcion que procesa un texto de entrada especifico y devuelve una respuesta determinada a dicho texto"""
     processed: str = text.lower()
 
     if 'Hola' in processed:
@@ -61,6 +70,17 @@ def handle_response(text: str) -> str:
     return 'No entiendo lo que escribiste... '
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Funcion asincronica que permite realizar operaciones de entrada y salida sin bloquear el hilo de ejecucion.
+    --- Encargada de la gestion de mensajes dentro del bot --- 
+    Extrae el tipo de chat (grupo, canal o chat privado)
+    Extrae el texto del mensaje recibido
+    Imprime informacion sobre el usuario que envio el mensaje
+    Imprime la respuesta generada
+    Envia la respuesta al usuario
+    Keywords arguments:
+    Update -- primer argumento, objeto que representa la actualizacion recibida del bot, contiene informacion sobre -> mensaje, chat, usuario
+    context -- parametro para almacenar datos y pasar informacion entre las diferentes funciones del bot -> Estado del usuario, historial, acceso a funcionalidades
+    """
     message_type: str = update.message.chat.type
     text: str = update.message.text
 
@@ -105,7 +125,14 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print('Bot: ', response)
     await update.message.reply_text(response)
 
-async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def erro(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Funcion asincronica que permite realizar operaciones de entrada y salida sin bloquear el hilo de ejecucion.
+    --- Encargada de la gestion de errores dentro del bot ---
+    Imprime en consola un mensaje que indica la actualizacion que causo el error y el error especifico que ocurrio 
+    Keywords arguments:
+    Update -- primer argumento, objeto que representa la actualizacion recibida del bot, contiene informacion sobre -> mensaje, chat, usuario
+    context -- parametro para almacenar datos y pasar informacion entre las diferentes funciones del bot -> Estado del usuario, historial, acceso a funcionalidades
+    """
     print(f'Update {update} caused error {context.error}')
 
 if __name__ == '__main__':
