@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import re
 
 class Reader:
     """
@@ -176,3 +177,33 @@ class Reader:
         """
         becarios = pd.read_csv(f'data/asesorias/{tema}/becarios.csv')
         return becarios
+    
+    @staticmethod
+    def show_horarios(df: pd.DataFrame) -> str:
+        """
+        Regresa un string con los horarios de la asesoría.
+
+        Parameters:
+        -----------
+        df : pd.DataFrame
+            DataFrame con los horarios de la asesoría.
+
+        Returns:
+        --------
+        str
+            String con los horarios de la asesoría.
+        """
+        result = ''
+        becarios = df['Nombre'].unique()
+        for becario in becarios:
+            nombre_becario = ' '.join(re.findall('[A-Z][^A-Z]*', becario))
+            result += f'{nombre_becario}:\n'
+            horarios = df[df['Nombre'] == becario]
+            for i in range(len(horarios)):
+                dia = horarios.iloc[i]['Dia']
+                hora = horarios.iloc[i]['Horario']
+                result += "* " + dia.capitalize() + " - " + hora + "\n"
+            result += '\n'
+
+            
+        return result

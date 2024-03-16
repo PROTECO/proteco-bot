@@ -1,7 +1,7 @@
 from typing import Final
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
-from modules import reader
+from modules import, info
 import pandas as pd
 
 # Constantes
@@ -44,8 +44,20 @@ async def custom_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
     await update.message.reply_text(' Este es un comando personalizado')
 
+async def view_schedules_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Funcion asincronica que permite realizar operaciones de entrada y salida sin bloquear el hilo de ejecucion.
+    --- Encargada de gestionar el comando /horarios_asesoria ---
+    Keywords arguments:
+    Update -- primer argumento, objeto que representa la actualizacion recibida del bot, contiene informacion sobre -> mensaje, chat, usuario
+    context -- parametro para almacenar datos y pasar informacion entre las diferentes funciones del bot -> Estado del usuario, historial, acceso a funcionalidades
+    """
+    context.user_data['option'] = 'schedule'
+    await update.message.reply_text('Elige un tema de asesoría: \n' + '\n'.join([f'{i+1}. {tema}' for i, tema in enumerate(TEMAS_ASESORIA)]))
+    return
+
 # Manejadores de opciones
 def schedule_reader(input):
+    ""
     if input.isdigit() and int(input) > 0 and int(input) <= len(TEMAS_ASESORIA):
         index = int(input) - 1
         if index < len(TEMAS_ASESORIA):
@@ -88,6 +100,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     if context.user_data['option'] != None:
         match context.user_data['option']:
+            # Lectura de horarios
             case 'schedule':
                 response = schedule_reader(text)
                 while not response:
@@ -102,11 +115,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     df_online = lector.getHorarioAsesoriaEnLinea(asesoria)
                     df_presencial = lector.getHorarioAsesoriaPresencial(asesoria)
 
-                    await update.message.reply_text(f'Horarios en línea:')
-                    # TODO: Mostrar horarios con formato
-                    
-                    await update.message.reply_text(f'Horarios en presencial:')
-                    # TODO: Mostrar horarios con formato
+                    await update.message.reply_text(f'Horarios en línea:\n\n{lector.show_horarios(df_online)}')
+                    await update.message.reply_text(f'Horarios presenciales:\n\n{lector.show_horarios(df_presencial)}')
 
                     context.user_data['option'] = None
                     return
@@ -125,7 +135,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print('Bot: ', response)
     await update.message.reply_text(response)
 
-async def erro(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Funcion asincronica que permite realizar operaciones de entrada y salida sin bloquear el hilo de ejecucion.
     --- Encargada de la gestion de errores dentro del bot ---
     Imprime en consola un mensaje que indica la actualizacion que causo el error y el error especifico que ocurrio 
