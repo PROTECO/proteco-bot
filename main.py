@@ -1,7 +1,7 @@
 from typing import Final
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
-from modules import InfoProteco, Reader
+from modules import InfoProteco, Reader, utils
 import pandas as pd
 
 # Constantes
@@ -13,7 +13,7 @@ TEMAS_ASESORIA: Final = ("Arduino", "Analísis de Circuitos", "Bases de Datos", 
                          "Flutter", "Fundamentos de Programación", "Git-GitHub", "Instalación de Software",
                          "Java", "JavaScript", "Kubernetes", "LaTeX", "Linux" "Machine Learning",
                          "Mantenimiento de computadoras", "Matlab", "Office", "POO", "Python", "R",
-                         "Raspberyy PI", "React", "Redes de datos", "UML"
+                         "RaspberryPI", "React", "Redes de datos", "UML"
                          )
 lector = Reader.Reader()
 
@@ -28,6 +28,12 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context -- parametro para almacenar datos y pasar informacion entre las diferentes funciones del bot -> Estado del usuario, historial, acceso a funcionalidades
     """
     await update.message.reply_text(' Hola, Gracias por comunicarte conmigo, yo soy PROTECO BOT')
+    await update.message.reply_text('Comandos disponibles:\n\n'
+                                    '/start - Inicializa el bot\n'
+                                    '/help - Muestra los comandos disponibles\n'
+                                    '/info - Muestra información sobre PROTECO\n'
+                                    '/horarios_asesoria - Muestra los horarios de asesoría\n')
+	
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
@@ -104,7 +110,7 @@ def handle_response(text: str) -> str:
     if '¿Como estas?' in processed:
         return 'Muy bien'
     
-    return 'Lo sentimos, el bot por el momento no entiende comandos de ese tipo. Por favor, intenta con un comando.'
+    return 'Lo sentimos, el bot por el momento no entiende mensajes de texto, sólo comandos. Por favor, intenta con un comando.'
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
@@ -138,6 +144,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     return
                 else:
                     asesoria = TEMAS_ASESORIA[int(text)-1].lower()
+                    asesoria = utils.to_snake_case(asesoria)
                     df_online = lector.getHorarioAsesoriaEnLinea(asesoria)
                     df_presencial = lector.getHorarioAsesoriaPresencial(asesoria)
 
@@ -148,16 +155,21 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             # Información
             case 'info':
                 if text == '1':
-                    response = InfoProteco.objetivo()
+                    await update.message.reply_text( InfoProteco.objetivo() )
+                    response = 'Elige una opción:\n\n0. Salir\n1. Objetivo\n2. Misión'
 
                     
                 elif text == '2':
-                    response = InfoProteco.mision()
+                    await update.message.reply_text( InfoProteco.mision() )
+                    response = 'Elige una opción:\n\n0. Salir\n1. Objetivo\n2. Misión'
                 
                 elif text == '0':
                     context.user_data['option'] = None
-                    # TODO - Implementar un mensaje de despedida y regresar al menú principal
-                    return
+                    response = ('Comandos disponibles:\n\n'
+                                    '/start - Inicializa el bot\n'
+                                    '/help - Muestra los comandos disponibles\n'
+                                    '/info - Muestra información sobre PROTECO\n'
+                                    '/horarios_asesoria - Muestra los horarios de asesoría\n')
 
                 else:
                     response = 'Por favor, elige una opción válida' 
@@ -165,11 +177,19 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif message_type == 'group':
         if BOT_USERNAME in text:
             new_text: str = text.replace(BOT_USERNAME, '').strip()
-            response: str = handle_response(new_text)
+            response: str = handle_response(new_text) + '\n\n' + ('Comandos disponibles:\n\n'
+                                    '/start - Inicializa el bot\n'
+                                    '/help - Muestra los comandos disponibles\n'
+                                    '/info - Muestra información sobre PROTECO\n'
+                                    '/horarios_asesoria - Muestra los horarios de asesoría\n')
         else:
             return
     else:
-        response: str = handle_response(text)
+        response: str = handle_response(text) + '\n\n' + ('Comandos disponibles:\n\n'
+                                    '/start - Inicializa el bot\n'
+                                    '/help - Muestra los comandos disponibles\n'
+                                    '/info - Muestra información sobre PROTECO\n'
+                                    '/horarios_asesoria - Muestra los horarios de asesoría\n')
 
 
 
