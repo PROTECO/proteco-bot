@@ -1,4 +1,3 @@
 #!/bin/bash
 
-source ./venv/bin/activate
-python3 main.py
+/home/pi/Desktop/proteco-bot/venv/bin/python /home/pi/Desktop/proteco-bot/main.py
