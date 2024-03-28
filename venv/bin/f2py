@@ -1,4 +1,4 @@
-#!/home/nahtie/Desktop/proteco/proteco-bot/venv/bin/python
+#!/home/pi/Desktop/proteco-bot/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
