@@ -11,7 +11,7 @@ BOT_USERNAME: Final = '@proteco_telegram_bot'
 TEMAS_ASESORIA: Final = ("Arduino", "Analísis de Circuitos", "Bases de Datos", "C", "C#", "C++", 
                          "Ciberseguridad", "Desarrollo Web", "Electrónica", "Ensamblador Z80", "Excel",
                          "Flutter", "Fundamentos de Programación", "Git-GitHub", "Instalación de Software",
-                         "Java", "JavaScript", "Kubernetes", "LaTeX", "Linux" "Machine Learning",
+                         "Java", "JavaScript", "Kubernetes", "LaTeX", "Linux", "Machine Learning",
                          "Mantenimiento de computadoras", "Matlab", "Office", "POO", "Python", "R",
                          "RaspberryPI", "React", "Redes de datos", "UML"
                          )
