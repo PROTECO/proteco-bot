@@ -1,5 +1,5 @@
 ## <span style="color:rgb(0,0,225)">PROTECO-BOT</span>
-![Bot](img/bot-doc-img.png)
+![Bot](doc/img/bot-doc-img.png)
 ### <span style="color:rgb(225,225,0)">Description</span>
 The proyect 'proteco-bot' is a Telegram bot from PROTECO capable from to give information of:
 - Online advice
