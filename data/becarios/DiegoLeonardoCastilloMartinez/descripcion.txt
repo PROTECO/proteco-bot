@@ -1,11 +1,3 @@
 Nombre: Diego Leonardo Castillo Martinez 
-No: 10
-Horarios en línea:
-Horarios presenciales:
-Temas de asesorías:
--java
--excel
--c
--fundamentos_de_programacion
--ensamblador_z80
-Liga de calendly:nan
+No: 4
+Usuario Telegram: @LeonardoMartinez1234

@@ -1,16 +1,3 @@
 Nombre: Dulce Michelle Barrios Aguilar 
-No: 2
-Horarios en línea:
->lunes:11:00-13:00
->jueves:09:00-11:00
-Horarios presenciales:
-<lunes:13:00-15:00
-<miercoles:13:00-15:00
-Temas de asesorías:
--fundamentos_de_programacion
--linux
--poo
--eda
--java
--python
-Liga de calendly:https://calendly.com/michellebarrios/asesorias-proteco
+No: 1
+Usuario Telegram: None
