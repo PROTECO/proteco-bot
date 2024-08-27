@@ -1,5 +1,4 @@
-import pandas as pd
-import os
+import polars as pl
 import re
 
 class Reader:
@@ -10,33 +9,34 @@ class Reader:
 
     Methods:
     --------
-    getHorarioBecarioEnLinea(becario) -> pd.DataFrame:
+    getHorarioBecarioEnLinea(becario) -> pl.DataFrame:
         Regresa un DataFrame con los horarios en línea del becario.
     
-    getHorarioBecarioPresencial(becario) -> pd.DataFrame:
+    getHorarioBecarioPresencial(becario) -> pl.DataFrame:
         Regresa un DataFrame con los horarios presenciales del becario.
 
-    getTemasAsesoria(becario) -> pd.DataFrame:
+    getTemasAsesoria(becario) -> pl.DataFrame:
         Regresa un DataFrame con los temas de asesoría del becario.
 
-    getCalendlyLink(becario) -> pd.DataFrame:
+    getCalendlyLink(becario) -> pl.DataFrame:
         Regresa un DataFrame con los links de Calendly del becario.
 
     getBecarioDescripcion(becario) -> str:
         Regresa un string con la descripción del becario.
 
-    getHorarioAsesoriaPresencial(tema) -> pd.DataFrame:
+    getHorarioAsesoriaPresencial(tema) -> pl.DataFrame:
         Regresa un DataFrame con los horarios presenciales de la asesoría.
 
-    getHorarioAsesoriaEnLinea(tema) -> pd.DataFrame:
+    getHorarioAsesoriaEnLinea(tema) -> pl.DataFrame:
         Regresa un DataFrame con los horarios en línea de la asesoría.
 
-    getBecarios(tema) -> pd.DataFrame:
+    getBecarios(tema) -> pl.DataFrame:
         Regresa un DataFrame con los becarios que están inscritos en la asesoría.
     """
 
+
     # INFORMACIÓN DE LOS BECARIOS
-    def getHorarioBecarioEnLinea(becario: str) -> pd.DataFrame:
+    def getHorarioBecarioEnLinea(becario: str) -> pl.DataFrame:
         """
         Regresa un DataFrame con los horarios en línea del becario.
         
@@ -47,13 +47,15 @@ class Reader:
 
         Returns:
         --------
-        pd.DataFrame
+        pl.DataFrame
             DataFrame con los horarios en línea del becario.
         """
-        horario_en_linea = pd.read_csv(f'data/becarios/{becario}/horario_en_linea.csv')
+        horario_en_linea = pl.read_csv(f'data/becarios/{becario}/horario_en_linea.csv')
         return horario_en_linea
     
-    def getHorarioBecarioPresencial(becario: str) -> pd.DataFrame:
+    
+    
+    def getHorarioBecarioPresencial(becario: str) -> pl.DataFrame:
         """
         Regresa un DataFrame con los horarios presenciales del becario.
         
@@ -64,13 +66,14 @@ class Reader:
 
         Returns:
         --------
-        pd.DataFrame
+        pl.DataFrame
             DataFrame con los horarios presenciales del becario.
         """
-        horario_presencial = pd.read_csv(f'data/becarios/{becario}/horario_presencial.csv')
+        horario_presencial = pl.read_csv(f'data/becarios/{becario}/horario_presencial.csv')
         return horario_presencial
     
-    def getTemasAsesoria(becario: str) -> pd.DataFrame:
+    
+    def getTemasAsesoria(becario: str) -> pl.DataFrame:
         """
         Regresa un DataFrame con los temas de asesoría del becario.
 
@@ -81,13 +84,14 @@ class Reader:
 
         Returns:
         --------
-        pd.DataFrame
+        pl.DataFrame
             DataFrame con los temas de asesoría del becario.
         """
-        temas_asesoria = pd.read_csv(f'data/becarios/{becario}/temas_asesoria.csv')
+        temas_asesoria = pl.read_csv(f'data/becarios/{becario}/temas_asesoria.csv')
         return temas_asesoria
     
-    def getCalendlyLink(becario: str) -> pd.DataFrame:
+    
+    def getCalendlyLink(becario: str) -> pl.DataFrame:
         """
         Regresa un DataFrame con los links de Calendly del becario.
         
@@ -98,11 +102,12 @@ class Reader:
 
         Returns:
         --------
-        pd.DataFrame
+        pl.DataFrame
             DataFrame con los links de Calendly del becario.
         """
-        calendly_link = pd.read_csv(f'data/becarios/{becario}/calendly_link.csv')
+        calendly_link = pl.read_csv(f'data/becarios/{becario}/calendly_link.csv')
         return calendly_link
+
 
     def getBecarioDescripcion(becario: str) -> str:
         """
@@ -125,7 +130,7 @@ class Reader:
 
     ## INFORMACIÓN DE LAS ASESORÍAS
     @staticmethod
-    def getHorarioAsesoriaPresencial(tema: str) -> pd.DataFrame:
+    def getHorarioAsesoriaPresencial(tema: str) -> pl.DataFrame:
         """
         Regresa un DataFrame con los horarios presenciales de la asesoría.
 
@@ -136,14 +141,15 @@ class Reader:
 
         Returns:
         --------
-        pd.DataFrame
+        pl.DataFrame
             DataFrame con los horarios presenciales de la asesoría.
         """
-        horario_asesoria = pd.read_csv(f'data/asesorias/{tema}/presencial.csv')
+        horario_asesoria = pl.read_csv(f'data/asesorias/{tema}/presencial.csv')
         return horario_asesoria
     
+    
     @staticmethod
-    def getHorarioAsesoriaEnLinea(tema: str) -> pd.DataFrame:
+    def getHorarioAsesoriaEnLinea(tema: str) -> pl.DataFrame:
         """
         Regresa un DataFrame con los horarios en línea de la asesoría.
 
@@ -154,14 +160,15 @@ class Reader:
 
         Returns:
         --------
-        pd.DataFrame
+        pl.DataFrame
             DataFrame con los horarios en línea de la asesoría.
         """
-        horario_asesoria = pd.read_csv(f'data/asesorias/{tema}/en_linea.csv')
+        horario_asesoria = pl.read_csv(f'data/asesorias/{tema}/en_linea.csv')
         return horario_asesoria
     
+    
     @staticmethod
-    def getBecarios(tema: str) -> pd.DataFrame:
+    def getBecarios(tema: str) -> pl.DataFrame:
         """
         Regresa un DataFrame con los becarios que están inscritos en la asesoría.
 
@@ -172,20 +179,21 @@ class Reader:
 
         Returns:
         --------
-        pd.DataFrame
+        pl.DataFrame
             DataFrame con los becarios que están inscritos en la asesoría.
         """
-        becarios = pd.read_csv(f'data/asesorias/{tema}/becarios.csv')
+        becarios = pl.read_csv(f'data/asesorias/{tema}/becarios.csv')
         return becarios
     
+    
     @staticmethod
-    def show_horarios(df: pd.DataFrame) -> str:
+    def show_horarios(df: pl.DataFrame) -> str:
         """
         Regresa un string con los horarios de la asesoría.
 
         Parameters:
         -----------
-        df : pd.DataFrame
+        df : pl.DataFrame
             DataFrame con los horarios de la asesoría.
 
         Returns:
