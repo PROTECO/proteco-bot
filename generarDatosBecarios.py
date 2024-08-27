@@ -24,25 +24,24 @@ for becario in data.to_dicts():
         user_telegram = becario['Usuario Telegram']
         
 
-        print(f'Nombre: {nombre_pascal}')
-
         # Crear directorio para el becario
         os.makedirs(f'data/becarios/{nombre_pascal}', exist_ok=True)
 
         # Crear archivo de descripción
         with open(f'data/becarios/{nombre_pascal}/descripcion.txt', 'w') as file:
             file.write(f'Nombre: {nombre}\n')
-            file.write(f'No: {id}\n')
             file.write(f'Usuario Telegram: {user_telegram}\n')
-            # Insertar horarios en un archivo
-            for horario in horarios:
-                with open(f'data/becarios/{nombre_pascal}/horarios.csv', 'a') as file:
-                    file.write(f'{horario}\n')
-            # Insertar temas de asesoría en un archivo
-            for tema in temas_asesoria_becario:
-                temas_asesoria.add(tema)
-                with open(f'data/becarios/{nombre_pascal}/temas_asesoria.csv', 'a') as file:
-                    file.write(f'{tema}\n')
+        
+        # Insertar horarios en un archivo
+        for horario in horarios:
+            with open(f'data/becarios/{nombre_pascal}/horarios.csv', 'a') as file:
+                file.write(f'{horario}\n')
+        
+        # Insertar temas de asesoría en un archivo
+        for tema in temas_asesoria_becario:
+            temas_asesoria.add(tema)
+            with open(f'data/becarios/{nombre_pascal}/temas_asesoria.csv', 'a') as file:
+                file.write(f'{tema}\n')
     
     except Exception as e:
         print(f'Error insertando becario {nombre}: {e}')
@@ -56,5 +55,4 @@ for tema in temas_asesoria:
         for becario in data.to_dicts():
             temas_asesoria_becario = [NamingConventions.to_snake_case(tema) for tema in becario['Temas de asesorías'].split(',')]
             if tema in temas_asesoria_becario:
-                print(f'{becario["Nombre"]} asesora en {tema}')
                 file.write(f'{NamingConventions.to_pascal_case(becario["Nombre"])}\n')
