@@ -65,3 +65,25 @@ class NamingConventions:
         code = [word.capitalize() for word in code]
         # Unir las palabras
         return "".join(code)
+    
+    @staticmethod
+    def snake_to_capitalized(code):
+        """
+        Converts a snake case string to a capitalized string
+        
+        Parameters:
+        -----------
+        code: str
+            String to convert
+        
+        Returns:
+        --------
+        str
+            String converted to capitalized
+        """
+        # Separar por guiones bajos
+        code = code.split("_")
+        # Capitalizar cada palabra
+        code = [word.capitalize() if word != 'de' or word != "y" else word.upper() for word in code]
+        # Unir las palabras
+        return " ".join(code)
