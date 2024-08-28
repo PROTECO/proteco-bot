@@ -1,6 +1,6 @@
 import polars as pl
 import os
-from Utils.naming_conventions import NamingConventions
+from utils.naming_conventions import NamingConventions
 
 # Lista de lenguajes de programación ofrecidos
 temas_asesoria = set()
