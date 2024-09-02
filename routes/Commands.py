@@ -10,7 +10,7 @@ TEMAS_ASESORIA: Final = (
     'poo', 'metodologias_agiles', 'excel', 'cloud', 'arduino', 'redes', 'plantuml', 'c++', 'git_&_github', 
     'java', 'python', 'fundamentos_de_programacion', 'estructuras_de_datos_y_algoritmos', 'css', 'diseno_bases_de_datos', 
     'machine_learning', 'matlab', 'c', 'docker', 'c#', 'valorant', 'html', 'r', 'javascript', 'raspberrypi', 
-    'bases_de_datos', 'instalacion_de_software', 'js', 'ciberseguridad', 'sql', 'desarrollo_web', 'latex', 
+    'bases_de_datos', 'instalacion_de_software', 'ciberseguridad', 'sql', 'desarrollo_web', 'latex', 
     'powerbi', 'mantenimiento_de_computadoras', 'django.', 'inteligencia_artificial', 'linux', 'react'
 )
 
@@ -82,7 +82,7 @@ async def view_schedules_command(update: Update, context: ContextTypes.DEFAULT_T
     print(f'Usuario: {update.message.from_user.username} Solicitó información sobre PROTECO\n\n')
     
     # Mostrar los temas de asesoría
-    await update.message.reply_text('Elige un tema de asesoría: \n\n0. Cancelar' + '\n'.join([f'{i+1}. {tema}' for i, tema in enumerate(TEMAS_ASESORIA_FORMATEADOS)]))
+    await update.message.reply_text('Elige un tema de asesoría: \n\n0. Cancelar\n' + '\n'.join([f'{i+1}. {tema}' for i, tema in enumerate(TEMAS_ASESORIA_FORMATEADOS)]))
     return
 
 
